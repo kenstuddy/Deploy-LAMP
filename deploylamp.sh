@@ -10,7 +10,8 @@ sudo usermod -a -G admin ken
 sudo dpkg-statoverride --update --add root admin 4750 /bin/su
 sudo su -c "echo 'tmpfs /run/shm tmpfs defaults,noexec,nosuid 0 0' >> /etc/fstab"
 sudo su -c "echo 'nospoof on' >> /etc/host.conf"
-sudo chmod 744 -R /var/www/html
+find /var/www/html \( -type f -execdir chmod 644 {} \; \) \
+                  -o \( -type d -execdir chmod 711 {} \; \)
 sudo chown -R www-data:www-data /var/www/html
 sudo a2enmod headers
 sudo service apache2 restart
