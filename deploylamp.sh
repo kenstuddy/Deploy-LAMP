@@ -1,5 +1,10 @@
 #!/bin/bash
-#we can run this script as root with sudo, but we do not want to put the username as root
+if [ "$EUID" -ne 0 ]
+then 
+    echo "Please run this script as root."
+    exit
+fi
+#we can run this script as root, but we do not want to put the username as root
 until [[ $username != "" && $username != root ]]; do
 read -p "Please enter your username: " username
 done
