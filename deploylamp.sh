@@ -12,7 +12,7 @@ sudo apt-get update && sudo apt-get dist-upgrade -y
 sudo ufw allow 80
 sudo ufw allow 443
 sudo apt-get install openssh-server apache2 apache2-utils mysql-server php7.0 php7.0-curl php7.0-cgi libapache2-mod-php php-mcrypt php-mysql php-dom php-mbstring php-zip unzip -y
-sudo apt-get install php7.0-xml libxslt1.1 -y
+sudo apt-get install php7.0-xml php7.0-zip libxslt1.1 -y
 sudo mysql_secure_installation
 #done with installing LAMP, now it is time to secure the server
 sudo apt-get install fail2ban psad rkhunter chkrootkit -y
