@@ -13,7 +13,7 @@ sudo add-apt-repository ppa:ondrej/php -y
 sudo apt-get update && sudo apt-get dist-upgrade -y
 sudo ufw allow 80
 sudo ufw allow 443
-sudo apt-get install openssh-server apache2 apache2-utils mysql-server php7.2 php7.2-curl php7.2-cgi libapache2-mod-php php-mysql php7.2-dom php7.2-mbstring unzip -y
+sudo apt-get install p7zip-full openssh-server apache2 apache2-utils mysql-server php7.2 php7.2-curl php7.2-cgi libapache2-mod-php php-mysql php7.2-dom php7.2-mbstring unzip -y
 sudo apt-get install php7.2-xml php7.2-zip libxslt1.1 -y
 sudo mysql_secure_installation
 #Done with installing LAMP, now it is time to secure the server
