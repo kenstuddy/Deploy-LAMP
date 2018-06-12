@@ -15,8 +15,8 @@ curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt-get update && sudo apt-get dist-upgrade -y
 sudo ufw allow 80
 sudo ufw allow 443
-sudo apt-get install nodejs p7zip-full openssh-server apache2 apache2-utils mysql-server php7.2 php7.2-curl php7.2-cgi libapache2-mod-php7.2 php-mysql php7.2-dom php7.2-mbstring unzip php7.2-xml php7.2-zip libxslt1.1 php7.2-sqlite3 -y
-sudo apt-get install libapache2-mod-php5.6 php5.6 php5.6-curl php5.6-cgi php5.6-dom php5.6-mbstring php5.6-xml php5.6-zip -y
+sudo apt-get install nodejs p7zip-full openssh-server apache2 apache2-utils mysql-server php7.2 php7.2-curl php7.2-cgi php7.2-gd libapache2-mod-php7.2 php-mysql php7.2-dom php7.2-mbstring unzip php7.2-xml php7.2-zip libxslt1.1 php7.2-sqlite3 -y
+sudo apt-get install libapache2-mod-php5.6 php5.6 php5.6-curl php5.6-cgi php5.6-dom php5.6-mbstring php5.6-xml php5.6-zip php5.6-gd -y
 sudo mysql_secure_installation
 #Done with installing LAMP, now it is time to secure the server
 sudo apt-get install fail2ban psad rkhunter chkrootkit -y
