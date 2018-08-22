@@ -9,7 +9,9 @@ until [[ $username != "" && $username != root ]]; do
 read -p "Please enter your username: " username
 done
 #Add repository for PHP 7.2
-sudo LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php -y
+sudo add-apt-repository ppa:ondrej/php -y
+#We used to be able to have sudo LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php -y however this syntax is no longer valid in Ubuntu 18.04
+export LC_ALL=C.UTF-8
 #Add repository for Node.js LTS 6.x
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt-get update && sudo apt-get dist-upgrade -y
