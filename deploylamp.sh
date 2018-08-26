@@ -6,7 +6,7 @@ then
 fi
 #We can run this script as root, but we do not want to put the username as root
 until [[ $username != "" && $username != root ]]; do
-read -p "Please enter your username: " username
+    read -p "Please enter your username: " username
 done
 #Add repository for PHP 7.2
 sudo add-apt-repository ppa:ondrej/php -y
