@@ -25,16 +25,12 @@ sudo apt-get install fail2ban psad rkhunter chkrootkit -y
 sudo groupadd admin
 sudo usermod -a -G admin $username
 sudo dpkg-statoverride --update --add root admin 4750 /bin/su
-if grep -lir "tmpfs /run/shm tmpfs defaults,noexec,nosuid 0 0" "/etc/fstab"
+if ! grep -lir "tmpfs /run/shm tmpfs defaults,noexec,nosuid 0 0" "/etc/fstab"
 then
-    echo ""
-else
     sudo su -c "echo 'tmpfs /run/shm tmpfs defaults,noexec,nosuid 0 0' >> /etc/fstab"
 fi
-if grep -lir "nospoof on" "/etc/host.conf"
+if ! grep -lir "nospoof on" "/etc/host.conf"
 then
-    echo ""
-else
     sudo su -c "echo 'nospoof on' >> /etc/host.conf"
 fi
 sudo find /var/www/html \( -type f -execdir chmod 644 {} \; \) \
