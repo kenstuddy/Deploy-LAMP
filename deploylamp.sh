@@ -1,12 +1,13 @@
 #!/bin/bash
-if [ "$EUID" -ne 0 ]
+if [[ "$EUID" != 0 ]]
 then 
     echo "Please run this script as root."
     exit
 fi
 #We can run this script as root, but we do not want to put the username as root
 until [[ $username != "" && $username != root ]]; do
-    read -p "Please enter your username: " username
+    echo "Please enter your username: "
+    read -s username
 done
 #Add repository for PHP 7.2
 sudo add-apt-repository ppa:ondrej/php -y
