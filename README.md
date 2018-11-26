@@ -3,6 +3,7 @@ This is a script used for deploying LAMP (Linux, Apache, MySQL, PHP) on Debian-b
 
 # Requirements
 Debian 9 or newer
+
 Ubuntu 16.04 or newer
 
 # How To Install
