@@ -9,7 +9,7 @@ until [[ $username != "" && $username != root ]]; do
     echo "Please enter your username: "
     read -s username
 done
-#Add repository for PHP 7.2
+#Add repository for PHP 7.3
 sudo add-apt-repository ppa:ondrej/php -y
 #We used to be able to have sudo LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php -y however this syntax is no longer valid in Ubuntu 18.04
 export LC_ALL=C.UTF-8
@@ -19,8 +19,7 @@ sudo apt-get update && sudo apt-get dist-upgrade -y
 sudo ufw allow 80
 sudo ufw allow 443
 sudo ufw allow 22
-sudo apt-get install uptimed nodejs p7zip-full openssh-server apache2 apache2-utils mysql-server php7.2 php7.2-curl php7.2-cgi php7.2-gd libapache2-mod-php7.2 php-mysql php7.2-dom php7.2-mbstring unzip php7.2-xml php7.2-zip libxslt1.1 php7.2-sqlite3 -y
-sudo apt-get install libapache2-mod-php5.6 php5.6 php5.6-curl php5.6-cgi php5.6-dom php5.6-mbstring php5.6-xml php5.6-zip php5.6-gd -y
+sudo apt-get install uptimed nodejs p7zip-full openssh-server apache2 apache2-utils mysql-server php7.3 php7.3-curl php7.3-cgi php7.3-gd libapache2-mod-php7.3 php-mysql php7.3-dom php7.3-mbstring unzip php7.3-xml php7.3-zip libxslt1.1 php7.3-sqlite3 webp php-imagick -y
 sudo mysql_secure_installation
 #Done with installing LAMP, now it is time to secure the server
 sudo apt-get install fail2ban psad rkhunter chkrootkit -y
@@ -42,17 +41,17 @@ sudo ufw enable
 sudo a2enmod headers
 sudo service apache2 restart
 
-#To enable php 7.2
-sudo a2dismod php5.6
-sudo a2enmod php7.2
+#To enable php 7.3
+sudo a2dismod php7.2
+sudo a2enmod php7.3
 sudo service apache2 restart
-sudo update-alternatives --set php /usr/bin/php7.2
-sudo update-alternatives --set phar /usr/bin/phar7.2
-sudo update-alternatives --set phar.phar /usr/bin/phar.phar7.2
-#To enable php 5.6
-#sudo a2dismod php7.2
-#sudo a2enmod php5.6
+sudo update-alternatives --set php /usr/bin/php7.3
+sudo update-alternatives --set phar /usr/bin/phar7.3
+sudo update-alternatives --set phar.phar /usr/bin/phar.phar7.3
+#To enable php 7.2
+#sudo a2dismod php7.3
+#sudo a2enmod php7.2
 #sudo service apache2 restart
-#sudo update-alternatives --set php /usr/bin/php5.6
-#sudo update-alternatives --set phar /usr/bin/phar5.6
-#sudo update-alternatives --set phar.phar /usr/bin/phar.phar5.6 
+#sudo update-alternatives --set php /usr/bin/php7.2
+#sudo update-alternatives --set phar /usr/bin/phar7.2
+#sudo update-alternatives --set phar.phar /usr/bin/phar.phar7.2 
