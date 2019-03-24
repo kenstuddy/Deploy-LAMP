@@ -30,10 +30,6 @@ if ! grep -lir "tmpfs /run/shm tmpfs defaults,noexec,nosuid 0 0" "/etc/fstab"
 then
     sudo su -c "echo 'tmpfs /run/shm tmpfs defaults,noexec,nosuid 0 0' >> /etc/fstab"
 fi
-if ! grep -lir "nospoof on" "/etc/host.conf"
-then
-    sudo su -c "echo 'nospoof on' >> /etc/host.conf"
-fi
 sudo find /var/www/html \( -type f -execdir chmod 644 {} \; \) \
                   -o \( -type d -execdir chmod 711 {} \; \)
 sudo chown -R www-data:www-data /var/www/html
