@@ -2,6 +2,8 @@
 This is a script used for deploying LAMP (Linux, Apache, MySQL, PHP) on Debian-based distributions of Linux (Debian, Ubuntu, etc). 
 
 # Requirements
+One of the following:
+
 Debian 9 or newer
 
 Ubuntu 16.04 or newer
